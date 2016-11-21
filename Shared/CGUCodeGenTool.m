@@ -158,8 +158,7 @@
     if (![implementation isEqualToString:[NSString stringWithContentsOfURL:implementationURL encoding:NSUTF8StringEncoding error:NULL]]) {
         [implementation writeToURL:implementationURL atomically:YES encoding:NSUTF8StringEncoding error:NULL];
     }
-    
-    NSLog(@"Wrote %@ to %@", self.className, currentDirectory);
+    printf("%s\n", self.className.UTF8String);
 }
 
 - (NSString *)methodNameForKey:(NSString *)key;
